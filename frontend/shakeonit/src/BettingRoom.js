@@ -69,7 +69,7 @@ function BettingRoom() {
     const handleEndGame = async () => {
         console.log("Ending the game...");
         try {
-            const response = await fetch('http://localhost:8001/award-winner', {
+            const response = await fetch(`http://localhost:8001/event/${id}/award-winner`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

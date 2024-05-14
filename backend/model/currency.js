@@ -134,5 +134,5 @@ const awardWinner = async (eventID) => {
 module.exports = {
   initializeUserCurrency,
   processBuyIn,
-  awardWinner
+  awardWinner,
 };
