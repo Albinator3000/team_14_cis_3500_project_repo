@@ -395,7 +395,7 @@ webapp.put('/event/:id/add-member', async (req, res) => {
  * POST /init-queue
  * This endpoint will initialize an empty event queue.
  */
-webapp.post('/init-queue', async (req, res) => {
+webapp.post('/queue/:/init-queue', async (req, res) => {
   try {
     const result = await queueLib.initializeEventQueue();
     if (result.message) {
@@ -413,7 +413,7 @@ webapp.post('/init-queue', async (req, res) => {
  * POST /update-queue
  * This endpoint will update the current event queue with the latest events.
  */
-webapp.post('/update-queue', async (req, res) => {
+webapp.post('/queue/:/update-queue', async (req, res) => {
   try {
     const result = await queueLib.updateEventQueue();
     res.status(200).json({ message: 'Event queue updated', data: result });
@@ -423,7 +423,7 @@ webapp.post('/update-queue', async (req, res) => {
 });
 
 // Initialize user currency
-webapp.post('/init-currency', async (req, res) => {
+webapp.post('/currency/:/init-currency', async (req, res) => {
   try {
     await currencyLib.initializeUserCurrency();
     res.status(200).json({ message: 'All users have been assigned starter currency.' });
@@ -447,7 +447,7 @@ webapp.get('/events', async (req, res) => {
 
 
 // Process buy-in for an event
-webapp.post('/process-buyin', async (req, res) => {
+webapp.post('/currency/:/process-buyin', async (req, res) => {
   const { eventID } = req.body;
   if (!eventID || !ObjectId.isValid(eventID)) {
     res.status(400).json({ message: 'Invalid or missing event ID' });
@@ -463,7 +463,7 @@ webapp.post('/process-buyin', async (req, res) => {
 });
 
 // Award the winner of an event
-webapp.post('/award-winner', async (req, res) => {
+webapp.post('/currency/:/award-winner', async (req, res) => {
   const { eventID } = req.body;
   if (!eventID || !ObjectId.isValid(eventID)) {
     res.status(400).json({ message: 'Invalid or missing event ID' });
