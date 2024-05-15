@@ -288,7 +288,7 @@ addMemberToEventParty('664070d349b7a2e1df44c8e3', "seanwjc");
 addMemberToEventParty('664070d349b7a2e1df44c8e3', "mhugues");
 // //getEventParty('6625eb2cc0c7ab0142dbb360');
 // getBuyIn('664070d349b7a2e1df44c8e3');
-getEventPot('664070d349b7a2e1df44c8e3');
+//getEventPot('664070d349b7a2e1df44c8e3');
 
 // setTimeout(() => {
 //   addMemberToEventParty('6625eb2cc0c7ab0142dbb360', "ophera2");
